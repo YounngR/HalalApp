@@ -1,0 +1,37 @@
+{% extends "halalapp/title.html" %}
+{% load static %}
+{% block content %}
+<body>
+  <div>
+    <table>
+      <tr>
+        <th style="width:280px; font-size:30px;" onclick="mainclick()">할랄 추천</th>
+        <th style="width:280px; font-size:30px;" onclick="goodsclick()">할랄 상품</th>
+        <th style="width:280px; font-size:30px;" onclick="recipeclick()">레시피</th>
+        <th style="width:280px; font-size:30px; color:rgb(51,172,128);" onclick="eventcilck()">이벤트</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><hr style="border: solid 3px rgb(51,172,128);"></td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+<script>
+  function mainclick(){
+    location.href= "{% url 'halalapp:main' %}";
+  }
+  function goodsclick(){
+    location.href= "{% url 'halalapp:goods' %}";
+  }
+  function recipeclick(){
+    location.href= "{% url 'halalapp:recipe' %}";
+  }
+  function eventcilck(){
+    location.href= "{% url 'halalapp:event' %}";
+  }
+</script>
+{% endblock %}
