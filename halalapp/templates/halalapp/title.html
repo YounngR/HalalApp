@@ -21,7 +21,7 @@
           <td style="text-align:center; font-size:2em;" onclick="homeclick()">홈</td>
           <td style="text-align:center; font-size:2em;">카테고리</td>
           <td style="text-align:center; font-size:2em;">검색</td>
-          <td style="text-align:center; font-size:2em;">마이 할랄</td>
+          <td style="text-align:center; font-size:2em;" onclick="my_halal()">마이 할랄</td>
         </tr>
       </table>
     </div>
@@ -32,6 +32,9 @@
 <script>
   function homeclick(){
     location.href= "{%url 'halalapp:main' %}";
+  }
+  function my_halal(){
+    location.href="{% url 'halalapp:login'%}";
   }
 </script>
 </html>

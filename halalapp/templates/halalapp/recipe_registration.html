@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+{% load static %}
+<style>
+  select{
+    text-align: center;
+    font-weight:bolder;
+    font-size:30px;
+    height:3vh;
+    width:15vh;
+  }
+  option{
+    font-size:10px;
+  }
+  #recipe_application{
+    font-weight:bolder;
+    font-size:35px;
+    width: 85vw;
+    height: 5vh;
+    border: 3px solid rgb(51,172,128);
+    background-color: rgba(0,0,0,0);
+    color: rgb(51,172,128);
+  }
+</style>
+<html lang="ko">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div style = "background-color:rgb(51,172,128); height:7vh;">
+        <div style="text-align:center;"><a href="{% url 'halalapp:main' %}"><img src="{% static 'halalapp/img/logo.png'%}" style="  height:6vh; width:10vw; margin-top:15px;"></a></div>
+    </div>
+
+    <div>
+      <table style="padding-top:25px;">
+        <tr>
+          <th style="width:280px; font-size:30px;" onclick="mainclick()">할랄 추천</th>
+          <th style="width:280px; font-size:30px;" onclick="goodsclick()">할랄 상품</th>
+          <th style="width:280px; font-size:30px; color:rgb(51,172,128);" onclick="recipeclick()">레시피</th>
+          <th style="width:280px; font-size:30px;" onclick="eventcilck()">이벤트</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><hr style="border: solid 3px rgb(51,172,128);"></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="background-color:rgb(244,244,244);">
+      <div style="padding-top:5vh; padding-left:3vh; padding-right:3vh;">
+        <div>
+          <img src="{% static 'halalapp/img/backarrow.png' %}" style="width:3vw; height:2vh;">
+          <label style="font-size:40px;">레시피 등록하기</label>
+        </div>
+
+        <div style="padding-top:1.5vh;">
+          <hr style="border: solid 1px rgb(112,112,112);">
+        </div>
+
+        <form name="apply" action="{% url 'halalapp:recipe_registration'%}" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div style="padding-top:2vh;">
+            <div>
+              <label style="font-size:40px; padding-right:18vw;">구분</label>
+              <select id="type">
+                <option>한식</option>
+                <option>일식</option>
+                <option>중식</option>
+                <option>분식</option>
+                <option>야식</option>
+                <option>아시안</option>
+              </select>
+            </div>
+          </div>
+          <div style="padding-top:1.5vh;">
+            <hr style="border: solid 1px rgb(205,205,205);">
+          </div>
+          <div style="padding-top:2vh;">
+            <div>
+              <label style="font-size:40px; padding-right:10vw;">레시피명</label>
+              <input type="text" id="recipe" style="width:25vw; height:2vh; font-size:30px;">
+            </div>
+          </div>
+        <div style="padding-top:1.5vh;">
+          <hr style="border: solid 1px rgb(205,205,205);">
+        </div>
+        <div style="padding-top:2vh;">
+          <div>
+            <label style="font-size:40px; padding-right:10vw;">등록일자</label>
+            <input type="date" id="Date" style="width:25vw; height:2vh; font-size:30px;">
+          </div>
+        </div>
+        <div style="padding-top:1.5vh;">
+          <hr style="border: solid 1px rgb(205,205,205);">
+        </div>
+        <div style="padding-top:2vh;">
+          <label style="font-size:40px; padding-right:5vw;">첨부 이미지</label>
+          <input type="file" id="file" style="font-size:25px;">
+        </div>
+        <div style="padding-top:1.5vh;">
+          <hr style="border: solid 1px rgb(205,205,205);">
+        </div>
+        <div style="padding-top:2vh;">
+          <div>
+            <label style="font-size:40px; padding-right:10vw;">세부내용</label>
+            <textarea id="r_textarea" rows="12" cols="40" style="font-size:25px;"></textarea>
+          </div>
+          <div>
+            <pre style="font-size:20px; padding-left:14vw;">
+            ㆍ5MB 이하의 용량만 가능합니다.
+            ㆍ반드시 음식이미지를 첨부해주셔야 합니다.
+            ㆍ세부내용 내 레시피 상세 설명 및 할랄 재료 인증 자료가 있어
+              야 합니다.
+            ㆍ첨부파일은 이미지 파일(jpg,jpeg,pdf,gif,png)만 가능합니다.
+            </pre>
+          </div>
+          <div style="padding-left:27vw;">
+            <p><input type="checkbox" id="r_check"  style="width:20px;height:20px;">
+            <label style="font-size:20px;">할랄 푸드 서비스 약관에 동의 합니다.</label></p>
+          </div>
+        </div>
+        </form>
+        <div>
+          <hr style="border: solid 5px rgb(51,172,128);">
+        </div>
+        <div style="padding-top:40px; padding-left:12px;">
+          <button id="recipe_application" onclick="apply()">등록신청</button>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+<script>
+
+  function apply(){
+    document.apply.submit();
+  }
+
+  function mainclick(){
+    location.href= "{% url 'halalapp:main' %}";
+  }
+
+  function goodsclick(){
+    location.href= "{% url 'halalapp:goods' %}";
+  }
+
+  function recipeclick(){
+    location.href= "{% url 'halalapp:recipe' %}";
+  }
+
+  function eventcilck(){
+    location.href= "{% url 'halalapp:event' %}";
+  }
+
+  function homeclick(){
+    location.href= "{%url 'halalapp:main' %}";
+  }
+</script>
+</html>

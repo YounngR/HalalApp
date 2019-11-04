@@ -18,3 +18,15 @@ def recipe(request):
 def event(request):
 
     return render(request, 'halalapp/event.html')
+
+def recipe_registration(request):
+
+    return render(request, 'halalapp/recipe_registration.html')
+
+def login(request):
+
+    return render(request, 'halalapp/login.html')
+    
+def Sign_up(request):
+
+    return render(request, 'halalapp/Sign_Up.html')

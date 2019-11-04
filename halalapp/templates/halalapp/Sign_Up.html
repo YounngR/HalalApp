@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <style>
+    h1 {
+       font-size: 30px;
+       font-weight: 500;
+       margin-top: 20px;
+       margin-bottom: 15px;
+       margin-left:7%;
+    }
+    .in{
+       border: 2px solid rgb(51, 172, 128);
+       border-radius: 5px;
+       font-size: 20px;
+       width: 90%;
+       height: 70px;
+       margin-bottom: 10px;
+       margin-left:6%;
+       padding: 0 0 0 20px;
+    }
+    #btn{
+        color: white;
+        border: 0px;
+        border-radius: 5px;
+        background-color: rgb(51, 172, 128);
+        width: 20%;
+        height: 70px;
+        font-size: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <div style = "background-color:rgb(51,172,128); height:7vh;">
+        <div style="text-align:center;"><a href="{% url 'halalapp:main' %}"><img src="{% static 'halalapp/img/logo.png'%}" style="  height:6vh; width:10vw; margin-top:15px;"></a></div>
+    </div>
+    <form name="write_form_member" method="post">
+    <div>
+        <h1 style="margin-bottom:20px; margin-left:40px; font-weight: 650;">회원가입</h1>
+    </div>
+    <div>
+        <hr style="border:solid 3px rgb(51, 172, 128); margin-bottom: 20px;">
+    </div>
+    <div>
+        <h1>아이디</h1>
+            <input class = "in" type="text" name="mbid" placeholder="아이디를 입력해주세요" style="width: 70%;">
+            <input id="btn" type="button" name="check_btn" value="중복확인">
+        <h1>비밀번호</h1>
+           <input class = "in" type="password" name="mbpw" placeholder="비밀번호를 입력해주세요">
+        <h1>비밀번호 확인</h1>
+            <input class = "in" type="password" name="mbpw_re" placeholder="비밀번호를 한 번 더 입력해주세요">
+        <h1> 이름</h1>
+            <input class = "in" type="text" name="mbname" placeholder="고객님의 이름을 입력해주세요">
+        <h1>이메일</h1>
+            <input class = "in" type='text' name="email" placeholder="이메일을 입력해주세요">
+        <h1>휴대폰</h1>
+            <input class = "in" type="text"name="tel" placeholder="휴대폰 번호를 숫자만 입력해주세요">
+        <h1>배송 주소</h1>
+            <input class = "in" type="text" name="zip" placeholder="배송 주소를입력해주세요">
+    </div>
+    <div>
+        <hr style="border:solid 3px rgb(51, 172, 128);">
+    </div>
+    <div>
+        <input id="btn" type="button" name="sign" value="가입하기" style="width: 90%; margin-left:5%; margin-top: 20px; font-size: 190%; font-weight: 475;"
+    </div>
+   </form>
+</body>
+{% block content %}
+{% endblock %}
+
+<script>
+   function homeclick() {
+       location.href = "{%url 'halalapp:main' %}";
+   }
+</script>
+</html>

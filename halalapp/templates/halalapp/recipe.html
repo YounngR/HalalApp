@@ -1,9 +1,21 @@
 {% extends "halalapp/title.html" %}
 {% load static %}
 {% block content %}
+<style>
+  #recipe_registration{
+    font-weight:bolder;
+    font-size:35px;
+    width: 98vw;
+    height: 5vh;
+    border: 3px solid rgb(51,172,128);
+    background-color: rgba(0,0,0,0);
+    color: rgb(51,172,128);
+    padding: 5px;
+  }
+</style>
 <body>
   <div>
-    <table>
+    <table style="padding-top:25px;">
       <tr>
         <th style="width:280px; font-size:30px;" onclick="mainclick()">할랄 추천</th>
         <th style="width:280px; font-size:30px;" onclick="goodsclick()">할랄 상품</th>
@@ -18,20 +30,39 @@
       </tr>
     </table>
   </div>
+  <div style="padding-top:40px;">
+    <button id="recipe_registration" onclick="registration()">레시피 등록하기</button>
+  </div>
+
+
+
+
+
+
+  <div style="float:left;">
+    <div style="width:90vw; height:10vh;"><div>
+  </div>
 </body>
 
 <script>
   function mainclick(){
     location.href= "{% url 'halalapp:main' %}";
   }
+
   function goodsclick(){
     location.href= "{% url 'halalapp:goods' %}";
   }
+
   function recipeclick(){
     location.href= "{% url 'halalapp:recipe' %}";
   }
+
   function eventcilck(){
     location.href= "{% url 'halalapp:event' %}";
+  }
+
+  function registration(){
+    location.href= "{% url 'halalapp:recipe_registration' %}";
   }
 </script>
 {% endblock %}

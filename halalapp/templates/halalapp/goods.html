@@ -3,16 +3,21 @@
 {% block content %}
 <style>
   select{
-     width: 110px;
-     height: 30px;
+    font-weight:bolder;
+    font-size:27px;
+    height:5vh;
+    width:9vh;
     -webkit-appearance: none;
-    -moz-appearance: none;
-     appearance: none;
+    background-color:transparent;
+    border-style: none;
+  }
+  option{
+    font-size:10px;
   }
 </style>
 <body>
   <div>
-    <table>
+    <table style="padding-top:25px;">
       <tr>
         <th style="width:280px; font-size:30px;" onclick="mainclick()">할랄 추천</th>
         <th style="width:280px; font-size:30px; color:rgb(51,172,128);" onclick="goodsclick()">할랄 상품</th>
@@ -28,12 +33,21 @@
     </table>
   </div>
   <div style="float:right;">
-    <select style="font-size:20px; height:10hv;">
+    <select>
       <option value="1">신상품순</option>
       <option value="2">인기순</option>
       <option value="3">낮은 가격순</option>
       <option value="4">높은 가격순</option>
     </select>
+    <img src="{% static 'halalapp/img/downarrow.png' %}" style="width:3vw; height:1.5vh;">
+  </div>
+
+
+
+
+
+  <div style="float:left;">
+    <div  style="width:90vw; height:10vh;"><div>
   </div>
 </body>
 
