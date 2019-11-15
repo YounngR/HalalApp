@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./test.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body style="background-color: #F2F2F2;">
+    <div style="background-color:rgb(51,172,128); height:130px;">
+        <div style="text-align:center;"><a href="{% url 'halalapp:main' %}"><img
+                    src="{% static 'halalapp/img/logo.png'%}" style="  height:100px; width:100px; margin-top:15px;"></a>
+        </div>
+    </div>
+
+    <div>
+        <div class="top">
+            <a href="#" class="btn" style="padding: 2% 2% 2% 2%;">자주 사는 상품<i class="fa fa-chevron-right"></i></a>
+        </div>
+
+        <div class="middle">
+            <div class="menu">
+                <li class="item" id="menu1">
+                    <a href="#menu1" class="btn" onclick="clicked">채소/과일/쌀<i class="fa fa-chevron-down"></i></a>
+                    <div class="smenu">
+                        <a href="#" class="start">전체보기</a>
+                        <a href="#">쌀</a>
+                        <a href="#">쌈/간편채소</a>
+                        <a href="#">양파/마을/생강/파</a>
+                        <a href="#">시금치/부추/나물</a>
+                        <a href="#" class="end">브로콜리/특수채소</a>
+                    </div>
+                </li>
+
+                <li class="item" id="menu2">
+                    <a href="#menu2" class="btn" onclick="clicked">수산/해산<i class="fa fa-chevron-down"></i></a>
+                    <div class="smenu">
+                        <a href="#" class="start">전체보기</a>
+                        <a href="#">생선류</a>
+                        <a href="#">새우류/랍스터</a>
+                        <a href="#">문어/오징어</a>
+                        <a href="#" class="end">홍합/바지락</a>
+                    </div>
+                </li>
+
+                <li class="item" id="menu3">
+                    <a href="#menu3" class="btn" onclick="clicked">정육/계란<i class="fa fa-chevron-down"></i></a>
+                    <div class="smenu">
+                        <a href="#" class="start">전체보기</a>
+                        <a href="#">소고기</a>
+                        <a href="#">닭고기</a>
+                        <a href="#">계란류</a>
+                        <a href="#" class="end">오리고기</a>
+                    </div>
+                </li>
+
+                <li class="item" id="menu4">
+                    <a href="#menu4" class="btn" onclick="clicked">국/찌개<i class="fa fa-chevron-down"></i></a>
+                    <div class="smenu">
+                        <a href="#" class="start">전체보기</a>
+                        <a href="#">국</a>
+                        <a href="#" class="end">찌개</a>
+                    </div>
+                </li>
+
+                <li class="item" id="menu5">
+                    <a href="#menu5" class="btn" onclick="clicked">반찬/메인요리<i class="fa fa-chevron-down"></i></a>
+                    <div class="smenu">
+                        <a href="#" class="start">전체보기</a>
+                        <a href="#">밑반찬</a>
+                        <a href="#">김치</a>
+                        <a href="#">김치</a>
+                        <a href="#" class="end">메인요리</a>
+                    </div>
+                </li>
+
+                <li class="item" id="menu6">
+                    <a href="#menu6" class="btn" onclick="clicked">샐러드/간편식<i class="fa fa-chevron-down"></i></a>
+                    <div class="smenu">
+                        <a href="#" class="start">전체보기</a>
+                        <a href="#">샐러드</a>
+                        <a href="#" class="end">죽/스프</a>
+                    </div>
+                </li>
+
+                <li class="item" id="menu7">
+                    <a href="#menu7" class="btn" onclick="clicked">양념/향신료<i class="fa fa-chevron-down"></i></a>
+                    <div class="smenu">
+                        <a href="#" class="start">전체보기</a>
+                        <a href="#">양념</a>
+                        <a href="#" class="end">향신료</a>
+                    </div>
+                </li>
+
+                <li class="item" id="menu8">
+                    <a href="#menu8" class="btn" onclick="clicked">음료/간식<i class="fa fa-chevron-down"></i></a>
+                    <div class="smenu">
+                        <a href="#" class="start">전체보기</a>
+                        <a href="#">음료</a>
+                        <a href="#" class="end">간식</a>
+                    </div>
+                </li>
+            </div>
+        </div>
+
+        <div style=" position:fixed; bottom:0; height:9vh; background:white">
+            <table>
+                <tr>
+                    <th style="width:28vw;" onclick="homeclick()"><img src="{% static 'halalapp/img/home.png'%}"
+                            style="height:5vh; width:10vw;"></th>
+                    <th style="width:28vw;"><img src="{% static 'halalapp/img/list.png'%}"
+                            style="height:5vh; width:10vw;"></th>
+                    <th style="width:28vw;"><img src="{% static 'halalapp/img/search.png'%}"
+                            style="height:5vh; width:10vw;">
+                    </th>
+                    <th style="width:28vw;"><img src="{% static 'halalapp/img/profile.png'%}"
+                            style="height:5vh; width:10vw;">
+                    </th>
+                </tr>
+                <tr>
+                    <td style="text-align:center; font-size:2em;" onclick="homeclick()">홈</td>
+                    <td style="text-align:center; font-size:2em;">카테고리</td>
+                    <td style="text-align:center; font-size:2em;">검색</td>
+                    <td style="text-align:center; font-size:2em;" onclick="my_halal()">마이 할랄</td>
+                </tr>
+            </table>
+        </div>
+</body>
+
+<script>
+    function homeclick() {
+        location.href = "{%url 'halalapp:main' %}";
+    }
+    function my_halal() {
+        location.href = "{% url 'halalapp:login'%}";
+    }
+    function clicked() {
+    }
+</script>
+</html>

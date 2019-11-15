@@ -1,0 +1,91 @@
+*{
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+.top{
+    position: relative;
+    padding: 3% 0 0 1%;
+    width: 90vw;
+}
+
+.top a{
+    font-size: 40px;
+    color: rgb(51, 172, 128);
+}
+
+.middle{
+    position: absolute;
+    
+}
+
+.menu{
+    width: 100vw;
+    border: none;
+    overflow: hidden;
+}
+
+.item{
+    border: none;
+    overflow: hidden;
+}
+
+.item a{
+    font-size: 38px;
+}
+
+.btn{
+    display: block;
+    width: 90vw;
+    margin-left: 5%;
+    margin-top: 2%;
+    background-color: white;
+    color: black;
+    position: relative;
+}
+
+a.btn{
+    text-align: left;
+    font-weight: bold;
+    padding: 3% 2% 3% 6%;
+    background-color: white;
+}
+
+.btn i{
+    float: right;
+    margin: 10px;
+}
+
+.smenu{
+    background: #F2F2F2;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    max-height: 0;
+
+}
+
+.smenu a{
+    display: block;
+    color: black;
+    font-size: 30px;
+    padding: 1.3% 0 1% 11%;
+    position: relative;
+    font-weight: bold;
+    
+}
+
+.item:target .smenu{
+    max-height: 30em;
+}
+
+.start{
+    margin-top: 3%;
+}
+
+.end{
+    margin-bottom: 3%;
+}
+
+.smenu a:hover{ color: rgb(51, 172, 128); text-decoration: none;}
+a.btn:hover{ color: rgb(51, 172, 128);}
