@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+    <link rel="stylesheet" href="./test.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <style>
+        .search{
+            width: 95vw;
+            height: 5vh;
+            background-color: white;
+            margin: 2% 2% 2% 2.5%;
+        }
+
+        #icon{
+            margin-top: 16px;
+            margin-left: 24px;
+            font-size: 3em;
+        }
+
+        #btn{
+            width: 17vw;
+            height: 4.5vh;
+            margin-top: 0.25vh;
+            float:right;
+            color: white;
+            background-color: rgb(51,172,128);
+            font-size: 1.8em;
+            border-radius: 3px;
+            border: 0px;
+
+        }
+
+        #textField{
+            width: 60vw;
+            height: 4vh;
+            margin-left: 5vw;
+            border: none;
+            font-size: 2em;
+        }
+
+        .pix{
+            width: 100vw;
+            height: 3vh;
+            color: rgb(51,172,128);
+            background-color: white;
+            font-size: 1.8em;
+            padding: 5px 0 0 6vw;
+        }
+
+        .recent_search{
+            width: 100vw;
+            height: 5vh;
+            font-size: 2em;
+            padding: 1vh 0 0 6vw;
+            background-color: white;
+            margin-top: 7px;
+        }
+
+    </style>
+</head>
+<body style = "background-color : #F2F2F2;">
+
+  <div style="background-color:rgb(51,172,128); height:130px;">
+       <div style="text-align:center;"><a href="{% url 'halalapp:main' %}"><img
+                   src="{% static 'halalapp/img/logo.png'%}" style="  height:100px; width:100px; margin-top:15px;"></a>
+       </div>
+   </div>
+
+  <div class="search">
+        <i id="icon" class="fa fa-search"></i>
+        <input id="textField" type="text" name="search">
+        <input id="btn" type="button" value="검색">
+  </div>
+
+  <div class="pix">최근 검색어</div>
+
+  <div class="recent_search">
+      떡볶이
+  </div>
+
+  <div style=" position:fixed; bottom:0; height:9vh; background:white">
+            <table>
+                <tr>
+                    <th style="width:28vw;" onclick="homeclick()"><img src="{% static 'halalapp/img/home.png'%}"
+                            style="height:5vh; width:10vw;"></th>
+                    <th style="width:28vw;"><img src="{% static 'halalapp/img/list.png'%}"
+                            style="height:5vh; width:10vw;"></th>
+                    <th style="width:28vw;"><img src="{% static 'halalapp/img/search.png'%}"
+                            style="height:5vh; width:10vw;">
+                    </th>
+                    <th style="width:28vw;"><img src="{% static 'halalapp/img/profile.png'%}"
+                            style="height:5vh; width:10vw;">
+                    </th>
+                </tr>
+                <tr>
+                    <td style="text-align:center; font-size:2em;" onclick="homeclick()">홈</td>
+                    <td style="text-align:center; font-size:2em;">카테고리</td>
+                    <td style="text-align:center; font-size:2em;">검색</td>
+                    <td style="text-align:center; font-size:2em;" onclick="my_halal()">마이 할랄</td>
+                </tr>
+            </table>
+    </div>
+</body>
