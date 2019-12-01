@@ -1,0 +1,56 @@
+*{
+    text-decoration: none;
+}
+
+#text1{
+    margin: 10px;
+
+}
+.top{
+    text-align: center;
+    width: 100vw;
+    height: 35vh;
+    background-color: white;
+}
+
+.event-button{
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+    margin-top: 4vh;
+    font-size: 1.8rem;
+
+}
+
+.login-button{
+    background-color: rgb(51, 172, 128);
+    border: 0px;
+    width: 90vw;
+    margin: 5vh 2vh 0 2vw;
+    font-size: 2rem;
+    padding: 24px;
+}
+
+
+.middle-button{
+    margin: 24px 0 24px 0;
+    width: 92vw;
+    background-color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 3%;
+}
+
+table tr td{
+    width: 100vw;
+    background-color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 3%;
+}
+
+i{
+    float: right;
+}
+
+a:link { color: black; text-decoration: none;}
+a:visited { color: black; text-decoration: none;}
