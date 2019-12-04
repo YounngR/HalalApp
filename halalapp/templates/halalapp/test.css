@@ -81,5 +81,9 @@ a.btn{
     margin-bottom: 3%;
 }
 
+table tr th{
+  text-align: center;
+}
+
 .smenu a:hover{ color: rgb(51, 172, 128); text-decoration: none;}
 a.btn:hover{ color: rgb(51, 172, 128);}
